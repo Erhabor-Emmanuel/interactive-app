@@ -36,7 +36,10 @@ class _HomeState extends State<Home> {
           title: Text('Fooderlich', style: Theme.of(context).textTheme.headline6,),
         ),
         //  Todo: Show selected tab
-        body: pages[tabManager.selectedTab],
+        body: IndexedStack(
+          index: tabManager.selectedTab,
+          children: pages,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           // 5
           selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
